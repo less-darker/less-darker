@@ -41,5 +41,8 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+<<<<<<< HEAD
 .env
 *.pfx
+=======
+>>>>>>> dd5fc85 (initial commit)
