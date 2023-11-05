@@ -1,1 +1,76 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: IMBrand;
+    src: url('./assets/fonts/Kdg-Medium.woff2');
+}
+
+@font-face {
+    font-family: NotoSans;
+    src: url('./assets/fonts/NotoSans-Medium.woff2');
+}
+
+@font-face {
+    font-family: NotoSans;
+    font-weight: bold;
+    src: url('./assets/fonts/NotoSans-Bold.woff2');
+}
+
+html {
+    background-color: black;
+    font-family: NotoSans, Arial;
+}
+
+html,
+body {
+    border-color: #736b5e;
+    color: #e8e6e3;
+    margin: 0;
+    padding: 0;
+    min-width: 100vw;
+    max-width: 100vw;
+    min-height: 100vh;
+    max-height: 100vh;
+    line-height: 1.6;
+    text-rendering: optimizeLegibility;
+    caret-color: transparent;
+}
+
+* {
+    scrollbar-color: #454a4d #202324;
+}
+
+a {
+    text-decoration: none;
+    font-family: IMBrand;
+}
+
+span {
+    color: orange;
+}
+
+.row,
+.column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    flex-direction: column;
+}
+
+.row {
+    flex-direction: row;
+}
+
+.unselectable,
+.uninteractable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.uninteractable {
+    pointer-events: none;
+}

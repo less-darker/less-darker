@@ -1,9 +1,9 @@
 {
   "name": "less-darker",
   "version": "0.0.0",
-  "license": "MIT",
+  "license": "MIT License",
   "author": "Fiskoal",
-  "description": "Unofficial Dark and Darker Companion App",
+  "description": "The Unofficial Dark and Darker Companion App",
   "main": "electronConfig.js",
   "scripts": {
     "ng": "ng",
@@ -12,9 +12,10 @@
     "test": "ng test",
     "electron": "electron .",
     "electron-build": "ng build && electron .",
-    "start": "electron-forge start",
-    "package": "electron-forge package",
-    "make": "electron-forge make"
+    "restart": "electron-force start",
+    "start": "ng build && electron-forge start",
+    "package": "ng build && electron-forge package",
+    "make": "ng build && electron-forge make"
   },
   "private": true,
   "dependencies": {
@@ -26,6 +27,7 @@
     "@angular/platform-browser": "^15.0.0",
     "@angular/platform-browser-dynamic": "^15.0.0",
     "@angular/router": "^15.0.0",
+    "@foxglove/electron-socket": "^2.1.1",
     "dotenv": "^16.3.1",
     "electron-squirrel-startup": "^1.0.0",
     "rxjs": "~7.5.0",
@@ -43,7 +45,9 @@
     "@electron-forge/maker-zip": "^6.4.2",
     "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
     "@types/jasmine": "~4.3.0",
+    "@types/node": "^20.8.10",
     "electron": "^27.0.2",
+    "electron-compile": "^6.4.4",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",

@@ -1,15 +1,16 @@
 module.exports = {
   packagerConfig: {
     asar: true,
-    icon: './icon'
+    icon: './src/favicon.ico'
   },
   rebuildConfig: {},
   makers: [
     {
       name: '@electron-forge/maker-squirrel',
       config: {
-        certificateFile: './less-darker.pfx',
-        certificatePassword: process.env.CERTIFICATE_PASSWORD
+        loadingGif: './src/assets/images/installer-logo-gif.gif',
+        setupExe: 'less-darker-v0.0.a1-setup.exe',
+        setupIcon: './src/favicon.ico'
       },
     },
     {
