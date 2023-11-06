@@ -14,6 +14,7 @@
     "electron-build": "ng build && electron .",
     "restart": "electron-force start",
     "start": "ng build && electron-forge start",
+    "quickstart": "electron-forge start",
     "package": "ng build && electron-forge package",
     "make": "ng build && electron-forge make"
   },

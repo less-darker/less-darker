@@ -1,24 +1,3 @@
-@font-face {
-    font-family: IMBrand;
-    src: url('./assets/fonts/Kdg-Medium.woff2');
-}
-
-@font-face {
-    font-family: NotoSans;
-    src: url('./assets/fonts/NotoSans-Medium.woff2');
-}
-
-@font-face {
-    font-family: NotoSans;
-    font-weight: bold;
-    src: url('./assets/fonts/NotoSans-Bold.woff2');
-}
-
-html {
-    background-color: black;
-    font-family: NotoSans, Arial;
-}
-
 html,
 body {
     border-color: #736b5e;
@@ -36,11 +15,6 @@ body {
 
 * {
     scrollbar-color: #454a4d #202324;
-}
-
-a {
-    text-decoration: none;
-    font-family: IMBrand;
 }
 
 span {
