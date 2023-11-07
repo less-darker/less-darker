@@ -3,7 +3,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
 import { PingTesterComponent } from './components/ping-tester/ping-tester.component';
 import { MapsComponent } from './components/maps/maps.component';
 import { CalcComponent } from './components/calc/calc.component';
@@ -13,7 +12,6 @@ import { CheatSheetComponent } from './components/cheat-sheet/cheat-sheet.compon
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
     PingTesterComponent,
     MapsComponent,
     CalcComponent,

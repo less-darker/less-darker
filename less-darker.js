@@ -1,6 +1,6 @@
 const { app, protocol, BrowserWindow } = require('electron');
 const Protocol = require("./protocol");
-const lessdarker = require('./lessdarker');
+const lessdarker = require('./less-darker-lib');
 
 if (require('electron-squirrel-startup')) app.quit();
 
@@ -10,6 +10,7 @@ function createWindow() {
   lessdarker.setupWindow();
 }
 
+// for electron-sockets
 protocol.registerSchemesAsPrivileged([{
   scheme: Protocol.scheme,
   privileges: {

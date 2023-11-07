@@ -4,7 +4,7 @@
   "license": "MIT License",
   "author": "Fiskoal",
   "description": "The Unofficial Dark and Darker Companion App",
-  "main": "electronConfig.js",
+  "main": "less-darker.js",
   "scripts": {
     "ng": "ng",
     "build": "ng build",

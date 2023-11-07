@@ -38,4 +38,8 @@ module.exports = function setupWindow() {
     window.once('ready-to-show', () => {
         window.show();
     })
+    
+    // window.webContents.once("dom-ready", () => {
+    //     window.webContents.openDevTools();
+    // });
 }

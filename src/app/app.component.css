@@ -31,9 +31,5 @@
     flex-direction: column;
     min-height: 100vh;
     max-height: 100vh;
-    background-image: url('../assets/images/background.png');
-    background-size: 100% 1000px;
-    background-repeat: repeat;
-    background-position: center;
     justify-content: space-between;
 }

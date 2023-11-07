@@ -13,6 +13,13 @@ body {
     caret-color: transparent;
 }
 
+body {
+    background-image: url('./assets/images/background.png');
+    background-size: 100% 1000px;
+    background-repeat: repeat;
+    background-position: center;
+}
+
 * {
     scrollbar-color: #454a4d #202324;
 }
