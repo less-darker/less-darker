@@ -1,0 +1,19 @@
+html, body {
+    height: 0px;
+    width: 0px;
+    margin: 0px;
+    padding: 0px;
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    max-width: fit-content;
+    max-height: fit-content;
+    font-family: NotoSans, Arial;
+}
+
+p {
+    color: white;
+}

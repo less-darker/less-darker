@@ -6,10 +6,8 @@ function init() {
     tray = new Tray(icon);
 
     const contextMenu = Menu.buildFromTemplate([
-        { label: 'Item1' },
-        { label: 'Item2' },
-        { label: 'Item3' },
-        { label: 'Item4' }
+        { label: 'Open' },
+        { label: 'Close' }
     ]);
 
     tray.setContextMenu(contextMenu);

@@ -8,6 +8,7 @@ const config = {
     backgroundColor: '#ffffff',
     icon: '../../app/favicon.ico',
     show: false,
+    closable: false,
     titleBarOverlay: {
         color: '#080808',
         symbolColor: '#202020',
@@ -22,9 +23,9 @@ function init(window) {
         window.show();
     })
 
-    // window.webContents.once("dom-ready", () => {
-    //     window.webContents.openDevTools();
-    // });
+    window.webContents.once("dom-ready", () => {
+        window.webContents.openDevTools();
+    });
 
     return window;
 }
