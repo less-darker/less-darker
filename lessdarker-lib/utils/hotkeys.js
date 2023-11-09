@@ -1,7 +1,9 @@
 const { globalShortcut } = require('electron');
 
-module.exports = function setupShortcuts() {
+function init() {
     globalShortcut.register('Shift+Tab', () => {
         console.log('not yet, patience');
     });
 }
+
+module.exports = { init }

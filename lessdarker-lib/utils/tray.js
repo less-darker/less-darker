@@ -1,6 +1,6 @@
 const { Tray, Menu, nativeImage } = require('electron');
 
-module.exports = function setupTray() {
+function init() {
     let tray;
     const icon = nativeImage.createFromPath('./src/assets/images/logo.png');
     tray = new Tray(icon);
@@ -10,9 +10,11 @@ module.exports = function setupTray() {
         { label: 'Item2' },
         { label: 'Item3' },
         { label: 'Item4' }
-    ])
+    ]);
 
-    tray.setContextMenu(contextMenu)
-    tray.setToolTip('Less Darker')
-    tray.setTitle('Less Darker')
-}
+    tray.setContextMenu(contextMenu);
+    tray.setToolTip('Less Darker');
+    tray.setTitle('Less Darker');
+};
+
+module.exports = { init }

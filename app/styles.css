@@ -1,3 +1,8 @@
+@font-face {
+    font-family: NotoSans;
+    src: url('./assets/fonts/NotoSans-Medium.woff2');
+}
+
 html,
 body {
     border-color: #736b5e;
@@ -11,6 +16,7 @@ body {
     line-height: 1.6;
     text-rendering: optimizeLegibility;
     caret-color: transparent;
+    font-family: NotoSans, Arial;
 }
 
 body {
