@@ -2,7 +2,7 @@ const { Tray, Menu, nativeImage } = require('electron');
 
 function init() {
     let tray;
-    const icon = nativeImage.createFromPath('./src/assets/images/logo.png');
+    const icon = nativeImage.createFromPath('./app/assets/images/logo.png');
     tray = new Tray(icon);
 
     const contextMenu = Menu.buildFromTemplate([

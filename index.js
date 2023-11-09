@@ -28,30 +28,27 @@ function loopPing() {
 }
 
 async function checkForGame() {
-  desktopCapturer.getSources({ types: ['window'] }).then(async sources => {
-    for (const source of sources) {
-      if (source.name.includes('Dark and Darker')) {
-        window.webContents.send('gameIsOpen', true);
-        return
-      } else {
-        setTimeout(() => {
-          checkForGame();
-        }, 1000);
+  setTimeout(() => {
+    desktopCapturer.getSources({ types: ['window'] }).then(async sources => {
+      for (const source of sources) {
+        if (source.name.includes('Dark and Darker')) {
+          window.webContents.send('gameIsOpen', true);
+          return
+        }
       }
-    }
-  })
+    });
+    checkForGame();
+  }, 2000);
 }
 
-app.on('ready', createWindow);
+app.whenReady().then(() => {
+  createWindow()
+
+  app.on('activate', () => {
+    if (BrowserWindow.getAllWindows().length === 0) createWindow()
+  })
+})
 
 app.on('window-all-closed', () => {
-  if (process.platform !== 'darwin') {
-    app.quit();
-  };
-});
-
-app.on('activate', () => {
-  if (BrowserWindow.getAllWindows().length === 0) {
-    createWindow();
-  };
-});
+  if (process.platform !== 'darwin') app.quit()
+})
