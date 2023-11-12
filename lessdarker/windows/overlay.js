@@ -3,10 +3,8 @@ const config = {
     webPreferences: {
         preload: path.join(__dirname, 'preload.js')
     },
-    // maxWidth: 10,
-    // maxHeight: 10,
     width: 50,
-    height: 20,
+    height: 15,
     show: false,
     frame: false,
     focusable: false,
@@ -20,21 +18,14 @@ const config = {
     fullscreenable: false,
     skipTaskbar: true,
     title: '',
-    x: 0,
-    y: 0,
-    titleBarOverlay: {
-        color: '#080808',
-        symbolColor: '#202020',
-        height: 25
-    }
+    y: 5,
+    x: 5
 };
 
-function init(overlay, gameWindow) {
+function init(overlay) {
     overlay.loadFile(`./app/overlay/index.html`);
     overlay.removeMenu();
-    overlay.once('ready-to-show', () => {
-        overlay.show();
-    })
+    overlay.setIgnoreMouseEvents(true);
 
     // overlay.webContents.once("dom-ready", () => {
     //     overlay.webContents.openDevTools();

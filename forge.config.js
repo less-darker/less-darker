@@ -8,9 +8,11 @@ module.exports = {
     {
       name: '@electron-forge/maker-squirrel',
       config: {
+        certificateFile: './less-darker.pfx',
         loadingGif: './app/assets/images/installer-logo-gif.gif',
-        setupExe: 'less-darker-v0.0.a1-setup.exe',
-        setupIcon: './app/favicon.ico'
+        setupIcon: './app/favicon.ico',
+        iconUrl: 'https://github.com/less-darker/less-darker/blob/ee2a274742785079a6300e0d61e9fe1cf47b7651/app/assets/images/logo.png',
+        name: 'LessDarker'
       },
     },
     {

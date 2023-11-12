@@ -1,13 +1,17 @@
-const { Tray, Menu, nativeImage } = require('electron');
+const { Tray, Menu, nativeImage, app } = require('electron');
+const path = require('path');
+let tray;
+let mainWindow;
 
-function init() {
-    let tray;
-    const icon = nativeImage.createFromPath('./app/assets/images/logo.png');
+function init(main) {
+    if (main) mainWindow = main;
+    const icon = nativeImage.createFromPath(path.join(__dirname, '/assets/logo.png'));
     tray = new Tray(icon);
 
     const contextMenu = Menu.buildFromTemplate([
-        { label: 'Open' },
-        { label: 'Close' }
+        { label: 'Show', click: show },
+        { label: 'Hide', click: hide },
+        { label: 'Close', click: close }
     ]);
 
     tray.setContextMenu(contextMenu);
@@ -15,4 +19,16 @@ function init() {
     tray.setTitle('Less Darker');
 };
 
-module.exports = { init }
+function show() {
+    mainWindow.show();
+}
+
+function hide() {
+    mainWindow.hide();
+}
+
+function close() {
+    app.exit();
+}
+
+module.exports = { tray, init }

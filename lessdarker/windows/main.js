@@ -3,29 +3,29 @@ const config = {
     webPreferences: {
         preload: path.join(__dirname, 'preload.js')
     },
-    width: 700,
-    height: 500,
+    width: 450,
+    height: 250,
     backgroundColor: '#ffffff',
     icon: '../../app/favicon.ico',
-    show: false,
-    closable: false,
-    titleBarOverlay: {
-        color: '#080808',
-        symbolColor: '#202020',
-        height: 25
-    }
+    show: false
 };
 
 function init(window) {
     window.loadFile(`./app/index.html`);
     window.removeMenu();
+
+    window.on('close', (event) => {
+        event.preventDefault();
+        window.hide();
+    });
+
     window.once('ready-to-show', () => {
         window.show();
-    })
-
-    window.webContents.once("dom-ready", () => {
-        window.webContents.openDevTools();
     });
+
+    // window.webContents.once("dom-ready", () => {
+    //     window.webContents.openDevTools();
+    // });
 
     return window;
 }
