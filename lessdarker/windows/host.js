@@ -17,6 +17,7 @@ const config = {
 };
 
 function init(host) {
+    // host process to talk between processes for the future possibly
     return host;
 }
 

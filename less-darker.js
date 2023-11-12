@@ -1,20 +1,23 @@
 const { app, desktopCapturer, BrowserWindow } = require('electron');
+
 const lessdarker = require('./lessdarker');
+const windows = lessdarker.windows;
+const utils = lessdarker.utils;
+
 const ping = require('ping');
 
-let host;
-let main;
+let client;
 let overlay;
 
 function init() {
-  host = new BrowserWindow(lessdarker.host.config);
-  main = new BrowserWindow(lessdarker.main.config);
-  overlay = new BrowserWindow(lessdarker.overlay.config);
+  client = new BrowserWindow(windows.client.config);
+  overlay = new BrowserWindow(windows.overlay.config);
 
-  lessdarker.main.init(main);
-  lessdarker.overlay.init(overlay);
-  lessdarker.hotkeys.init();
-  lessdarker.tray.init(main);
+  windows.client.init(client);
+  windows.overlay.init(overlay);
+  windows.tray.init(client);
+
+  utils.hotkeys.init();
 
   checkForGame();
   loopPing();
@@ -26,7 +29,7 @@ function echo() {
   }).then(res => {
     const response = res.time !== 'unknown' ? res.time : '0'
 
-    if (main) main.webContents.send('ping', response);
+    if (client) client.webContents.send('ping', response);
     if (overlay) overlay.webContents.send('ping', response);
   });
 }
@@ -38,6 +41,9 @@ function loopPing() {
 }
 
 async function checkForGame() {
+  if (overlay) {
+    overlay.moveTop();
+  }
   let isDarker = false;
   // add button on app for manual check (maybe custom toolbar?)
 
@@ -45,17 +51,17 @@ async function checkForGame() {
     for (const source of sources) {
       if (source.name === 'Dark and Darker  ') {
         if (overlay) overlay.show();
-        if (main) main.webContents.send('gameIsOpen', true);
+        if (client) client.webContents.send('gameIsOpen', true);
         isDarker = true;
       };
     };
   }).catch(err => {
-    console.log('If you see this, please create an issue that includes the error below https://github.com/less-darker/less-darker/issues/new');
+    console.log('If you see this, please email me at fiskoal@lessdarker.com and/or create an issue that includes the error below https://github.com/less-darker/less-darker/issues/new');
     console.log(err);
   }).then(() => {
     if (!isDarker) {
       if (overlay) overlay.hide();
-      if (main) main.webContents.send('gameIsOpen', false);
+      if (client) client.webContents.send('gameIsOpen', false);
     };
 
     setTimeout(() => {
@@ -65,17 +71,22 @@ async function checkForGame() {
 }
 
 if (!require('electron-squirrel-startup')) {
-  app.requestSingleInstanceLock();
-  
-  app.on('second-instance', (event) => {
-    // add something like event prevent default, hide window?
-    app.exit();
-  });
-  
+  const instanceLock = app.requestSingleInstanceLock();
+
+  if (!instanceLock) {
+    app.quit();
+  } else {
+    app.on('second-instance', (event, commandLine, workingDirectory) => {
+      if (client) {
+        if (client.isMinimized()) client.restore();
+        client.focus();
+      }
+    })
+  }
+
   app.whenReady().then(() => {
     init();
   });
-  
   app.on('window-all-closed', () => {
     if (process.platform !== 'darwin') app.exit();
   });

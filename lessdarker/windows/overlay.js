@@ -11,7 +11,6 @@ const config = {
     closable: false,
     minimizable: false,
     maximizable: false,
-    alwaysOnTop: true,
     transparent: true,
     resizable: false,
     movable: false,
@@ -23,9 +22,10 @@ const config = {
 };
 
 function init(overlay) {
-    overlay.loadFile(`./app/overlay/index.html`);
     overlay.removeMenu();
     overlay.setIgnoreMouseEvents(true);
+    overlay.setAlwaysOnTop(true, 'screen-saver');
+    overlay.loadFile(`./app/overlay/index.html`);
 
     // overlay.webContents.once("dom-ready", () => {
     //     overlay.webContents.openDevTools();

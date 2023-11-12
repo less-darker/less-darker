@@ -4,7 +4,7 @@
   "license": "",
   "author": "Fiskoal",
   "description": "The Unofficial Dark and Darker Companion App",
-  "main": "index.js",
+  "main": "less-darker.js",
   "scripts": {
     "electron": "electron .",
     "electron-build": "electron .",

@@ -10,24 +10,24 @@ const config = {
     show: false
 };
 
-function init(window) {
-    window.loadFile(`./app/index.html`);
-    window.removeMenu();
+function init(client) {
+    client.loadFile(`./app/index.html`);
+    client.removeMenu();
 
-    window.on('close', (event) => {
+    client.on('close', (event) => {
         event.preventDefault();
-        window.hide();
+        client.hide();
     });
 
-    window.once('ready-to-show', () => {
-        window.show();
+    client.once('ready-to-show', () => {
+        client.show();
     });
 
-    // window.webContents.once("dom-ready", () => {
-    //     window.webContents.openDevTools();
+    // client.webContents.once("dom-ready", () => {
+    //     client.webContents.openDevTools();
     // });
 
-    return window;
+    return client;
 }
 
 module.exports = { init, config };

@@ -1,5 +1,6 @@
 const host = require('./host');
-const main = require('./main');
+const client = require('./client');
 const overlay = require('./overlay');
+const tray = require('./tray');
 
-module.exports = { host, main, overlay };
+module.exports = { host, client, overlay, tray };

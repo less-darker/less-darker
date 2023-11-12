@@ -1,7 +1,6 @@
-const { host, main, overlay } = require('./windows');
-const tray = require('./utils/tray');
-const hotkeys = require('./utils/hotkeys');
+const windows = require('./windows');
+const utils = require('./utils');
 
-const lessdarker = { host, main, overlay, tray, hotkeys };
+const lessdarker = { windows, utils };
 
 module.exports = lessdarker;
