@@ -1,4 +1,4 @@
-**Not yet approved by IRONMACE.**
+**Not yet approved by IronMace.**
 
 **Currently under closed beta. See license before use.**
 
@@ -10,34 +10,16 @@
 
 Written in JavaScript, compiled with [Electron]([https://www.electronjs.org/](https://github.com/electron/electron)). Less Darker is a simple, free and open-source companion app for [Dark & Darker](https://darkanddarker.com/).
 
-Please help support the hard-working team at [IRONMACE](https://www.ironmace.com/) by buying a copy of their game!
-
-## Features
-  ### Client
-  
-  - Displays your ping to Dark and Darker's servers (currently only supporting USEast - others coming soon!)
-    - Check your ping outside the game
-    - Minimal packet size to keep your game lag-free
-
-  - Displays if Dark and Darker is detected by our client
-    - For peace of mind
-
-  - 'X' to Minimize to tray
-    - So that I can be cool like Discord
-
-  ### Overlay
-  
-  - Ping overlay
-    - Basic design for minimal distraction in-game
+Please help support the hard-working team at [IronMace](https://www.ironmace.com/) by buying a copy of their game!
 
 ## System Requirements
 
 - If you can run Dark and Darker, you can probably run this.
-
 - 64-bit Windows 10, 11
-  - This is all Dark and Darker currently supports, so we do not plan on adding support for any other platforms.
+- This is all Dark and Darker currently supports, so we do not plan on adding support for any other platforms.
 
 ## Get Started
+
 - Download the installer from our latest [release](https://github.com/less-darker/less-darker/releases) or from our [official website](https://lessdarker.com)
 - After installation, Less Darker should automatically launch
 - Make sure to pin the program somewhere you will remember, or follow [this easy guide](https://support.microsoft.com/en-us/windows/add-an-app-to-run-automatically-at-startup-in-windows-10-150da165-dcd9-7230-517b-cf3c295d89dd) to have it launch on startup.
@@ -48,5 +30,66 @@ Less Darker is licensed under the BSD-3-Clause license. See our [LICENSE](https:
 ## Contribute and Develop
 Once I have a working version of this that both IronMace and myself are happy with, I will document contribution guidelines and open contributions!
 
-## Screenshots
-Screenshots available soon!
+## Features
+
+### Client
+
+#### Ping Display
+
+```
+- Check your ping outside the game
+- Minimal packet size to keep your game lag-free
+- Currently only supporting USEast
+```
+
+#### Displays if Dark and Darker is detected by our client
+
+```
+- For peace of mind
+```
+
+#### 'X' to Minimize to tray
+
+```
+- So that we can be cool, like Discord
+```
+### Overlay
+  
+#### Ping (in ms)
+
+```
+- Basic design for minimal distraction in-game
+- Currently only supports USEast
+```
+
+## Planned Features
+```
+If any of the potential features below end up being released in-game, they will be removed.
+Please create issues and link them accordingly
+```
+### Auto-updater
+  
+### Full in-game overlay
+
+#### Hotkey
+  
+```
+- Full view toggle-able via hotkey (not sure what default bind should be yet)
+- Potential Dependencies: none
+```
+
+#### Full Maps
+  
+```
+- View full map in-game
+- Automatically display map for current run
+- Potential Dependencies: Detect game map
+```
+
+#### Trade Hub (name pending)
+
+```
+- Create and edit public trade offers, to be carried out in-game
+- Leave offers up to cook while you're busy looting
+- Potential Dependencies: Link and/or Create User Accounts, Social System
+```
