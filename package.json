@@ -1,6 +1,6 @@
 {
   "name": "less-darker",
-  "version": "0.0.1",
+  "version": "0.1.1",
   "license": "",
   "author": "Fiskoal",
   "description": "The Unofficial Dark and Darker Companion App",
@@ -27,6 +27,6 @@
     "@electron-forge/maker-zip": "^6.4.2",
     "@electron-forge/plugin-auto-unpack-natives": "^6.4.2",
     "electron": "^27.0.2",
-    "electron-compile": "^6.4.4"
+    "electron-compile": "^3.3.6"
   }
 }

@@ -27,10 +27,12 @@ function echo() {
   ping.promise.probe('35.71.175.214', {
     timeout: 10
   }).then(res => {
-    const response = res.time !== 'unknown' ? res.time : '0'
+    const response = res.time !== 'unknown' ? res.time : '0';
 
     if (client) client.webContents.send('ping', response);
     if (overlay) overlay.webContents.send('ping', response);
+
+    loopPing();
   });
 }
 
